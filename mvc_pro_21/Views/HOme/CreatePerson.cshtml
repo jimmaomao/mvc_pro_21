@@ -1,0 +1,29 @@
+﻿@model mvc_pro_21.Models.Person
+
+@{
+    ViewBag.Title = "CreatePerson";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreatePerson</h2>
+
+@*<form action="/Home/CreatePerson" method="post">*@
+@using (Html.BeginForm("CreatePerson","HOme",new { id="MyIdValue"},FormMethod.Post
+    ,new { @class="personClass",data_formType="Person"}))
+{
+    <div class="dataElem">
+        <label>PersonId</label>
+        <input name="personId" value="@Model.PersonId"/>
+    </div>
+    <div class="dataElem">
+        <label>First Name</label>
+        <input name="FirstName" value="@Model.FirstName" />
+    </div>
+    <div class="dataElem">
+        <label>Last Name</label>
+        <input name="LastName" value="@Model.LastName" />
+    </div>
+    <input type="submit" value="submit"/>
+@*</form>*@
+
+}
